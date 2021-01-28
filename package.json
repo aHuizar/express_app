@@ -19,6 +19,7 @@
     "url": "https://github.com/aHuizar/express_demo/issues"
   },
   "dependencies": {
+    "better-sqlite3": "^7.1.2",
     "express": "^4.17.1"
   }
 }

@@ -1,0 +1,9 @@
+node_modules
+.dockerignore
+Dockerfile
+.eslintcache
+.gitignore
+/client/src
+/client/public
+/client/package.json
+/client/package-lock.json
