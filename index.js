@@ -1,10 +1,23 @@
-const express = require("express");
+//const globby = require("globby");
 const path = require("path");
+//const Database = require("better-sqlite3");
+const express = require("express");
+
+// (async () => {
+//   const paths = await globby("./client/build/", {
+//     expandDirectories: true,
+//   });
+
+//   paths.forEach((route) => {
+//     console.log(path.join(__dirname, route));
+//   });
+
+//   //=> ['cat.png', 'unicorn.png', 'cow.jpg', 'rainbow.jpg']
+// })();
 
 const app = express();
 
-const Database = require("better-sqlite3");
-const db = new Database("foobar.db", { verbose: console.log });
+//const db = new Database("foobar.db", { verbose: console.log });
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, "client/build")));
@@ -15,7 +28,7 @@ app.get("/api/getList", (req, res) => {
   res.json(list);
   console.log("Sent list of items");
 });
-
+/*
 app.get("/api/cats/:name", (req, res) => {
   const stmt = db.prepare("SELECT * FROM cats WHERE name = ?");
   const cat = stmt.get(req.params.name);
@@ -49,6 +62,7 @@ try {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
+*/
 
 const port = process.env.PORT || 8080;
 app.listen(port);
